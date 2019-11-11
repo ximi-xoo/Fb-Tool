@@ -4,7 +4,7 @@ import time, sys
 
 TERMUX      = "/data/data/com.termux/files/usr/bin/"
 LINUX       = "/usr/bin/"
-DARKFLYEXEC = "tool"
+DARKFLYEXEC = "fb"
 COMMAND = {
     "termux":{1:"cd "+TERMUX+"Fb-Tool",2:"bash {}/{}".format(TERMUX,"Fb-Tool/fbtool.sh")},
     "linux":{1:"cd "+LINUX+"DarkFly-2019.1",2:"python3 {}/{}".format(LINUX,"DarkFly-2019.1/main.py")}
@@ -39,7 +39,7 @@ class Install:
         system("mv ../Fb-Tool %s && unzip chmod +x %s/%s && chmod 777 -R %s"%(TERMUX,TERMUX,DARKFLYEXEC,TERMUX+"/Fb-Tool"))
         if not self.environmentExists(TERMUX+DARKFLYEXEC) or not self.environmentExists(TERMUX+"Fb-Tool"):
             sys.exit("Install failed.")
-        sys.exit("[ ✓ ] Install Success, run: \"tool\"")
+        sys.exit("[ ✓ ] Install Success, run: \"fb\"")
         exect.close()
     
     def install(self):
